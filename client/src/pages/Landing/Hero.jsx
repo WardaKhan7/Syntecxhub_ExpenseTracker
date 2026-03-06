@@ -1,85 +1,59 @@
 import React from 'react';
 import { Button } from '../../components/ui/button';
 import { Link } from 'react-router-dom';
-import { ArrowRight, ChevronRight } from 'lucide-react';
+import { ArrowRight, ChevronRight, ShieldCheck } from 'lucide-react';
 
 const Hero = () => {
     return (
-        <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+        <section className="relative w-full pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden bg-background">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col items-center text-center">
 
-                    {/* Left Text Content */}
-                    <div className="max-w-2xl">
-                        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
-                            <span className="flex h-2 w-2 rounded-full bg-primary"></span>
-                            Announcing Trackly 2.0
-                            <ChevronRight className="w-4 h-4" />
-                        </div>
-
-                        <h1 className="font-poppins text-h1 font-bold text-typography-main leading-tight mb-6 tracking-tight">
-                            Master your money.<br />
-                            <span className="text-primary">Zero effort required.</span>
-                        </h1>
-
-                        <p className="text-typography-muted text-lg mb-8 max-w-xl">
-                            Track expenses, plan budgets, and manage all your accounts in one beautiful dashboard. The modern fintech experience you deserve.
-                        </p>
-
-                        <div className="flex flex-col sm:flex-row gap-4">
-                            <Link to="/signup">
-                                <Button size="lg" className="w-full sm:w-auto rounded-full text-base shadow-lg shadow-primary/25 hover:-translate-y-1 transition-transform">
-                                    Start for free <ArrowRight className="ml-2 w-4 h-4" />
-                                </Button>
-                            </Link>
-                            <Button variant="outline" size="lg" className="w-full sm:w-auto rounded-full text-base border-2 hover:bg-gray-50">
-                                Book a demo
-                            </Button>
-                        </div>
-
-                        <p className="mt-4 text-sm text-typography-muted">
-                            No credit card required. Free forever plan available.
-                        </p>
-                    </div>
-
-                    {/* Right Image/Mockup */}
-                    <div className="relative mx-auto w-full max-w-lg lg:max-w-none">
-                        {/* Decorative background blur */}
-                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-gradient-to-tr from-primary/20 to-accent/20 rounded-full blur-3xl -z-10"></div>
-
-                        <div className="relative rounded-2xl bg-white border border-borders shadow-2xl overflow-hidden transform md:-rotate-2 hover:rotate-0 transition-transform duration-500">
-                            <div className="bg-gray-100 flex items-center px-4 py-3 border-b border-borders">
-                                <div className="flex gap-2">
-                                    <div className="w-3 h-3 rounded-full bg-red-400"></div>
-                                    <div className="w-3 h-3 rounded-full bg-yellow-400"></div>
-                                    <div className="w-3 h-3 rounded-full bg-green-400"></div>
-                                </div>
-                            </div>
-                            <img
-                                src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80&w=1000"
-                                alt="Trackly Dashboard Preview"
-                                className="w-full object-cover h-[400px] lg:h-[500px]"
-                            />
-
-                            {/* Floating Trust Card Overlay */}
-                            <div className="absolute bottom-6 -left-6 bg-white p-4 rounded-xl shadow-xl border border-borders animate-bounce [animation-duration:3s]">
-                                <div className="flex items-center gap-3">
-                                    <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center text-green-600">
-                                        <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                                        </svg>
-                                    </div>
-                                    <div>
-                                        <p className="text-sm font-bold text-gray-900">+ $2,400.00</p>
-                                        <p className="text-xs text-gray-500">Salary received</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
+                {/* Hero Top Label */}
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-8">
+                    <span className="flex h-2.5 w-2.5 rounded-full bg-primary relative">
+                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+                    </span>
+                    The smartest way to track expenses
+                    <ChevronRight className="w-4 h-4 ml-1" />
                 </div>
+
+                {/* Hero Text */}
+                <h1 className="font-poppins text-5xl md:text-6xl lg:text-7xl font-bold text-typography-main leading-[1.1] mb-6 tracking-tight max-w-4xl">
+                    Master your money. <br />
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-[#8C84FF]">Zero effort required.</span>
+                </h1>
+
+                <p className="text-typography-muted text-lg md:text-xl mb-10 max-w-2xl leading-relaxed">
+                    Track expenses, plan budgets, and get total financial clarity in one beautiful, secure dashboard designed for modern life.
+                </p>
+
+                {/* Hero CTA Actions */}
+                <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto mt-4 px-4 sm:px-0">
+                    <Link to="/signup" className="w-full sm:w-auto">
+                        <Button size="lg" className="w-full sm:w-auto rounded-full text-base lg:text-lg px-8 py-6 shadow-xl shadow-primary/25 hover:-translate-y-1 transition-all duration-300">
+                            Create Free Account <ArrowRight className="ml-2 w-5 h-5" />
+                        </Button>
+                    </Link>
+                    <Link to="/login" className="w-full sm:w-auto">
+                        <Button variant="outline" size="lg" className="w-full sm:w-auto rounded-full text-base lg:text-lg px-8 py-6 border-2 border-borders hover:bg-surface hover:text-primary transition-all duration-300">
+                            Sign in to Dashboard
+                        </Button>
+                    </Link>
+                </div>
+
+                {/* Trust Indicator */}
+                <div className="mt-12 flex items-center justify-center gap-2 text-sm text-typography-muted">
+                    <ShieldCheck className="w-5 h-5 text-accent" />
+                    <span>Free forever for individuals. Bank-grade security.</span>
+                </div>
+
+                {/* Decorative floating blur behind content */}
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-primary/10 rounded-full blur-[100px] -z-10 pointer-events-none"></div>
+
             </div>
+
+            {/* Visual separator rule */}
+            <div className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-borders to-transparent"></div>
         </section>
     );
 };

@@ -14,24 +14,20 @@ const Navbar = () => {
                             <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
                                 <span className="text-secondary font-bold text-xl">T</span>
                             </div>
-                            <span className="font-poppins font-bold text-xl text-typography-main">Trackly</span>
+                            <span className="font-poppins font-bold text-xl text-typography-main tracking-tight">Trackly</span>
                         </Link>
                     </div>
 
-                    {/* Desktop Nav Links */}
-                    <div className="hidden md:flex space-x-8">
-                        <a href="#features" className="text-typography-muted hover:text-primary transition-colors font-medium">Features</a>
-                        <a href="#testimonials" className="text-typography-muted hover:text-primary transition-colors font-medium">Testimonials</a>
-                        <a href="#pricing" className="text-typography-muted hover:text-primary transition-colors font-medium">Pricing</a>
-                    </div>
+                    {/* Spacer for Center */}
+                    <div className="hidden md:flex flex-1"></div>
 
                     {/* CTA Buttons */}
                     <div className="flex items-center space-x-4">
-                        <Link to="/login" className="hidden sm:block text-typography-main hover:text-primary font-medium transition-colors">
-                            Log in
+                        <Link to="/login" className="text-typography-main hover:text-primary font-medium transition-colors text-sm sm:text-base">
+                            Sign in
                         </Link>
                         <Link to="/signup">
-                            <Button className="rounded-full shadow-sm hover:-translate-y-0.5 transition-transform">Get Started</Button>
+                            <Button className="rounded-full shadow-sm hover:-translate-y-0.5 transition-transform text-sm sm:text-base px-6">Get Started</Button>
                         </Link>
                     </div>
 
